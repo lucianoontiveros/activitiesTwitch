@@ -27,7 +27,7 @@ function App() {
 
   const tmiClient = useRef(
     new tmi.Client({
-      channels: [ 'brunispet' ]
+      channels: [ 'cuartodechenz' ]
     })
   ); 
   
