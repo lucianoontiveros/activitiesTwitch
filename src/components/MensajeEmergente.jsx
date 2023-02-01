@@ -1,5 +1,5 @@
 import React from 'react'
-import CardImg from '../img/cardimg'
+import CardImg from '../img/Cardimg'
 
 
   const MensajeEmergente = (props) => {
