@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import tmi from 'tmi.js'
-import MensajeEmergente from "/components/mensajeEmergente";
+import MensajeEmergente from "./components/MensajeEmergente";
 
 
 
