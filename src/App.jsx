@@ -1,6 +1,4 @@
-import { set } from "mongoose";
 import { useEffect, useRef, useState } from "react";
-import { render } from "react-dom";
 import tmi from 'tmi.js'
 import MensajeEmergente from "./components/mensajeEmergente"
 
