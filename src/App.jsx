@@ -13,7 +13,8 @@ class Actividad {
 }
 
 function App() {
-  const tmiClient  = useRef(
+
+  /* const tmiClient  = useRef(
     new tmi.Client({
       options: { debug: true },
       identity: {
@@ -22,7 +23,13 @@ function App() {
       },
       channels: [ import.meta.env.VITE_CHANNELS ]
     })
-  );
+  ); */
+
+  const tmiClient = useRef(
+    new tmi.Client({
+      channels: [ 'brunispet' ]
+    })
+  ); 
   
   const [ active, setActive] = useState(false)
   const [usuarioActual, setUsuarioActual] = useState({usuario:'', estado:''})
