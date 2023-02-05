@@ -67,7 +67,7 @@ const App = () => {
             setTimer(null);
           }, 20000)
         );
-        return client.say(channel, "El username fue registrado")
+        return console.log("El username fue registrado")
       }
 
       if (self || !message.startsWith('!')) return;
