@@ -76,7 +76,7 @@ const Comandos = (client, command, username) => {
       buscandoActividad().estado = "🖖 Se fue a entrenar fuerte !!! ⏱"
       break;
     default:
-      buscandoActividad().estado = "🖖 No se que carajo queres que haga, ese no es un comando"
+      buscandoActividad().estado = "!comandos !tutoriales !info !chenz"
       return
   }
 
