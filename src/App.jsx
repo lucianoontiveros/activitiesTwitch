@@ -39,7 +39,7 @@ const App = () => {
       if (self) return;
       const username = userstate.username;
       const displayName = userstate['display-name'];
-      const color = userstate?.color ?? "ffff"
+      const color = userstate?.color ?? "#ffffff"
       const nick = chalk.hex(color).underline(username)
       const subs = userstate?.subscriber;
       const mod = userstate?.mod;
