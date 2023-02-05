@@ -17,15 +17,21 @@ const App = () => {
   const [timer, setTimer] = useState(null);
   const [usuarioActual, setUsuarioActual] = useState({})
 
+  const client = new tmi.Client({
+    options: { debug: false },
+    identity: {
+      username: import.meta.env.VITE_APP_USERNAME,
+      password: import.meta.env.VITE_APP_PASSWORD,
+    },
+    channels: [import.meta.env.VITE_APP_CHANNELS]
+  });
+
+  console.log(import.meta.env.VITE_APP_USERNAME)
+  console.log(import.meta.env.VITE_APP_PASSWORD)
+  console.log(import.meta.env.VITE_APP_CHANNELS)
+
   useEffect(() => {
-    const client = new tmi.Client({
-      options: { debug: false },
-      identity: {
-        username: import.meta.env.VITE_APP_USERNAME,
-        password: import.meta.env.VITE_APP_PASSWORD,
-      },
-      channels: [import.meta.env.VITE_APP_CHANNELS]
-    });
+
 
     client.connect();
 
