@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import tmi from 'tmi.js'
-import chalk from "chalk";
 import dotenv from 'dotenv';
 import MensajeEmergente from "./components/MensajeEmergente.jsx";
 import Comandos from "./components/Comandos.jsx";
@@ -39,7 +38,6 @@ const App = () => {
       if (self) return;
       const username = userstate.username;
       const displayName = userstate['display-name'];
-      const color = userstate?.color ?? "#ffffff"
       const nick = chalk.hex(color).underline(username)
       const subs = userstate?.subscriber;
       const mod = userstate?.mod;
