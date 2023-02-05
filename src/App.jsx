@@ -24,12 +24,14 @@ const App = () => {
     const client = new tmi.Client({
       options: { debug: false },
       identity: {
-        username: import.meta.env.VITE_USERNAME,
-        password: import.meta.env.VITE_PASSWORD,
+        username: import.meta.env.VITE_APPUSERNAME,
+        password: import.meta.env.VITE_APPPASSWORD,
       },
-      channels: [import.meta.env.VITE_CHANNELS]
+      channels: [import.meta.env.VITE_APPCHANNELS]
     });
 
+    console.log(import.meta.env.VITE_APPUSERNAME)
+    console.log(import.meta.env.VITE_APPCHANNELS)
     client.connect();
 
     client.on("message", (channel, userstate, message, self) => {
