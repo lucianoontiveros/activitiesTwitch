@@ -40,7 +40,7 @@ const App = () => {
       const username = userstate.username;
       const displayName = userstate['display-name'];
       const color = userstate?.color ?? "ffff"
-      const nick = chalk.hex(color).underline.ansi256(username)
+      const nick = chalk.hex(color).underline.(username)
       const subs = userstate?.subscriber;
       const mod = userstate?.mod;
       const type = userstate['message-type'];
