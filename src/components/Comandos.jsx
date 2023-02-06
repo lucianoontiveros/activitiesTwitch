@@ -75,6 +75,36 @@ const Comandos = (client, command, username) => {
     case 'entrenar':
       buscandoActividad().estado = "🖖 Se fue a entrenar fuerte !!! ⏱"
       break;
+    case 'focus':
+      buscandoActividad().estado = "Ingresó un temporizador en pantalla ⏱"
+      break;
+    case 'estado':
+      buscandoActividad().estado = "Está revisando sus datos registrados 📃"
+      break;
+    case 'actividad':
+      buscandoActividad().estado = "Ingresó información a su estado 💽"
+      break;
+    case 'signo':
+      buscandoActividad().estado = "Registró su signo zodiacal 🧘‍♂️"
+      break;
+    case 'instagram':
+      buscandoActividad().estado = "Registró su perfil de Instragram 📷"
+      break;
+    case 'horario':
+      buscandoActividad().estado = "Este es nuestro horario tentativo ⏰"
+      break;
+    case 'discord':
+      buscandoActividad().estado = "Este es nuestro discord 📷🔊"
+      break;
+    case 'redes':
+      buscandoActividad().estado = "Esta son las redes del cuarto 📱"
+      break;
+    case 'yaesta':
+      buscandoActividad().estado = "🍃CHENZ YA ESTA LA SALA 🌳"
+      break;
+    case 'lee':
+      buscandoActividad().estado = "LEE MI MENSAJE CARAJO 👓"
+      break;
     default:
       buscandoActividad().estado = "!comandos !tutoriales !info !chenz"
       return
