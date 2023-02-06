@@ -75,7 +75,7 @@ const App = () => {
             setTimer(null);
           }, 20000)
         );
-        if ('Streamlabs' || 'botomizador' || 'StreamElements' || 'BrunisPet' || 'Nightbot' || 'MohCitrus' != username) {
+        if ('streamlabs' || 'botomizador' || 'streamelements' || 'brunispet' || 'nightbot' || 'mohcitrus' != username) {
           client.say(channel, mensajeGeneral + mensajeSubs + mensajeMod + mensajeVid)
         }
         return console.log("El username fue registrado")
