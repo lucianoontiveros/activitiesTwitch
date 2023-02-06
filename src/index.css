@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 .cardImg {
-    margin: 20px 20px 20px 20px;
+  margin: 20px 20px 20px 20px;
 }
 
 #cuerpoAlerta {
-    width: 100%;
+  width: 100%;
 }

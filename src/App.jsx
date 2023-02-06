@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import tmi from 'tmi.js'
+import tmi, { client } from 'tmi.js'
 import dotenv from 'dotenv';
 import MensajeEmergente from "./components/MensajeEmergente.jsx";
 import Comandos from "./components/Comandos.jsx";
@@ -54,6 +54,14 @@ const App = () => {
         (isMod ? "🗡️" : "");
       console.log(usuariosActividades)
 
+
+
+      const mensajeGeneral = `Que gusto verte por aquí @${username}`
+      const mensajeSubs = isSub ? ` 👑 Muchas gracias por apoyar este canal. Ya tenemos croquetas aseguradas para mi y los michis` : '.'
+      const mensajeMod = isMod ? ' y más encatada está lacomunidad por darle una mano a Chenz ⚔️ en tu rol de mod' : '.'
+      const mensajeVid = isVip ? ' Nos hace feliz contar con tu participación en estos dias 💎.' : '.'
+
+
       const buscandoActividad = () => usuariosActividades.find((items) => items.username === username)
       if (!buscandoActividad()) {
         let estado = 'Acaba de ingresar al chat 📱';
@@ -67,6 +75,9 @@ const App = () => {
             setTimer(null);
           }, 20000)
         );
+        if ('Streamlabs' || 'botomizador' || 'StreamElements' || 'BrunisPet' || 'Nightbot' || 'MohCitrus' != username) {
+          client.say(channel, mensajeGeneral + mensajeSubs + mensajeMod + mensajeVid)
+        }
         return console.log("El username fue registrado")
       }
 
