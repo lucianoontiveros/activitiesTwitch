@@ -30,8 +30,6 @@ const App = () => {
       channels: [import.meta.env.VITE_APPCHANNELS]
     });
 
-    console.log(import.meta.env.VITE_APPUSERNAME)
-    console.log(import.meta.env.VITE_APPCHANNELS)
     client.connect();
 
     client.on("message", (channel, userstate, message, self) => {
