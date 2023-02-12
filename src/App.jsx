@@ -102,9 +102,16 @@ const App = () => {
         setShowSalita(true)
         setTimer(
           setTimeout(() => {
-            setShowSalita(false);
             setTimer(null);
           }, 600000)
+        );
+        setShowSalita(false);
+        setShowMessage(true);
+        setTimer(
+          setTimeout(() => {
+            setShowMessage(false);
+            setTimer(null);
+          }, 20000)
         );
       }
     });
