@@ -3,6 +3,7 @@ import tmi, { client } from 'tmi.js'
 import dotenv from 'dotenv';
 import MensajeEmergente from "./components/MensajeEmergente.jsx";
 import Comandos from "./components/Comandos.jsx";
+import SalitaEspecial from "./components/SalitaEspecial.jsx";
 
 export const usuariosActividades = []
 
@@ -14,6 +15,7 @@ class Actividad {
 }
 const App = () => {
   const [showMessage, setShowMessage] = useState(false);
+  const [showSalita, setShowSalita] = useState(false);
   const [timer, setTimer] = useState(null);
   const [usuarioActual, setUsuarioActual] = useState({})
 
@@ -73,7 +75,7 @@ const App = () => {
             setTimer(null);
           }, 20000)
         );
-        if ('streamlabs' || 'botomizador' || 'streamelements' || 'brunispet' || 'nightbot' || 'mohcitrus' != username) {
+        if (username != 'streamlabs' && username != 'botomizador' && username != 'StreamElements' && username != 'BrunisPet' && username != 'Nightbot' && username != 'mohcitrus') {
           client.say(channel, mensajeGeneral + mensajeSubs + mensajeMod + mensajeVid)
         }
         return console.log("El username fue registrado")
@@ -81,9 +83,10 @@ const App = () => {
 
       if (self || !message.startsWith('!')) return;
       const args = message.slice(1).split(' ');
+      const num = message.slice(15)
       const command = args.shift().toLowerCase();
       Comandos(client, channel, command, username)
-      setUsuarioActual({ username, estado: buscandoActividad().estado, badges, isSub, isMod, isVip, isPrime })
+      setUsuarioActual({ username, estado: buscandoActividad().estado, badges, isSub, isMod, isVip, isPrime, num })
 
       setShowMessage(true);
       setTimer(
@@ -92,6 +95,16 @@ const App = () => {
           setTimer(null);
         }, 20000)
       );
+
+      if (command === 'salitaespecial') {
+        setShowSalita(true)
+        setTimer(
+          setTimeout(() => {
+            setShowSalita(false);
+            setTimer(null);
+          }, 600000)
+        );
+      }
     });
 
     return () => {
@@ -101,6 +114,7 @@ const App = () => {
 
   return (
     <div>
+      <SalitaEspecial showSalita={showSalita} usuarioActual={usuarioActual} />
       <MensajeEmergente showMessage={showMessage} usuarioActual={usuarioActual} />
     </div>
   );

@@ -105,6 +105,9 @@ const Comandos = (client, channel, command, username) => {
     case 'lee':
       buscandoActividad().estado = "LEE MI MENSAJE CARAJO 👓"
       break;
+    case 'salitaespecial':
+      buscandoActividad().estado = `Creando una salita especial 🌳`
+      break;
     default:
       buscandoActividad().estado = "!comandos !tutoriales !info !chenz"
       return
