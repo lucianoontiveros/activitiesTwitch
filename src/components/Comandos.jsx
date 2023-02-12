@@ -1,7 +1,7 @@
 import React from 'react'
 import { usuariosActividades } from '../App.jsx';
 
-const Comandos = (client, command, username) => {
+const Comandos = (client, channel, command, username) => {
   const buscandoActividad = () => usuariosActividades.find((items) => items.username === username)
   switch (command) {
     case 'lachancla':

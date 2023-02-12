@@ -82,7 +82,7 @@ const App = () => {
       if (self || !message.startsWith('!')) return;
       const args = message.slice(1).split(' ');
       const command = args.shift().toLowerCase();
-      Comandos(client, command, username)
+      Comandos(client, channel, command, username)
       setUsuarioActual({ username, estado: buscandoActividad().estado, badges, isSub, isMod, isVip, isPrime })
 
       setShowMessage(true);
