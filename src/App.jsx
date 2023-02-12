@@ -18,6 +18,7 @@ const App = () => {
   const [showSalita, setShowSalita] = useState(false);
   const [timer, setTimer] = useState(null);
   const [usuarioActual, setUsuarioActual] = useState({})
+  const [usuarioSalita, setUsuarioSalita] = useState({})
 
 
 
@@ -83,10 +84,9 @@ const App = () => {
 
       if (self || !message.startsWith('!')) return;
       const args = message.slice(1).split(' ');
-      const num = message.slice(15)
       const command = args.shift().toLowerCase();
       Comandos(client, channel, command, username)
-      setUsuarioActual({ username, estado: buscandoActividad().estado, badges, isSub, isMod, isVip, isPrime, num })
+      setUsuarioActual({ username, estado: buscandoActividad().estado, badges, isSub, isMod, isVip, isPrime })
 
       setShowMessage(true);
       setTimer(
@@ -97,6 +97,8 @@ const App = () => {
       );
 
       if (command === 'salitaespecial') {
+        const num = message.slice(15)
+        setUsuarioSalita({ username, estado: buscandoActividad().estado, badges, isSub, isMod, isVip, isPrime, num })
         setShowSalita(true)
         setTimer(
           setTimeout(() => {
@@ -114,7 +116,7 @@ const App = () => {
 
   return (
     <div>
-      <SalitaEspecial showSalita={showSalita} usuarioActual={usuarioActual} />
+      <SalitaEspecial showSalita={showSalita} usuarioSalita={usuarioSalita} />
       <MensajeEmergente showMessage={showMessage} usuarioActual={usuarioActual} />
     </div>
   );

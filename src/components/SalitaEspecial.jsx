@@ -2,7 +2,7 @@ import React from 'react'
 import pomo from '../img/pomo.gif'
 
 const SalitaEspecial = (props) => {
-  const { username, estado, badges, isSub, isMod, isVip, isPrime, num } = props.usuarioActual
+  const { username, estado, badges, isSub, isMod, isVip, isPrime, num } = props.usuarioSalita
   let clase = "mb-2 font-bold text-6xl text-center tracking-tight text-green-500 dark:text-white"
   if (isMod) { clase = "mb-2 font-bold text-6xl text-center tracking-tight text-green-300 dark:text-white" }
   if (isPrime) { clase = "mb-2 font-bold text-6xl text-center tracking-tight text-purple-400 dark:text-white" }
