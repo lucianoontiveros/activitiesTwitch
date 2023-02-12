@@ -116,8 +116,13 @@ const App = () => {
 
   return (
     <div>
-      <SalitaEspecial showSalita={showSalita} usuarioSalita={usuarioSalita} />
-      <MensajeEmergente showMessage={showMessage} usuarioActual={usuarioActual} />
+      {
+        showSalita ? (<SalitaEspecial showSalita={showSalita} usuarioSalita={usuarioSalita} />)
+          :
+          (<MensajeEmergente showMessage={showMessage} usuarioActual={usuarioActual} />)
+      }
+
+
     </div>
   );
 };
