@@ -102,16 +102,9 @@ const App = () => {
         setShowSalita(true)
         setTimer(
           setTimeout(() => {
+            setShowSalita(false);
             setTimer(null);
           }, 600000)
-        );
-        setShowSalita(false);
-        setShowMessage(true);
-        setTimer(
-          setTimeout(() => {
-            setShowMessage(false);
-            setTimer(null);
-          }, 20000)
         );
       }
     });
@@ -124,12 +117,10 @@ const App = () => {
   return (
     <div>
       {
-        showSalita ? (<SalitaEspecial showSalita={showSalita} usuarioSalita={usuarioSalita} />)
+        showSalita ? (<SalitaEspecial usuarioSalita={usuarioSalita} />)
           :
           (<MensajeEmergente showMessage={showMessage} usuarioActual={usuarioActual} />)
       }
-
-
     </div>
   );
 };

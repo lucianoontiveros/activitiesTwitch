@@ -10,22 +10,18 @@ const SalitaEspecial = (props) => {
 
   return (
     <div>
-      {
-        props.showSalita && (
-          <a
-            href="#"
-            className="cardImg flex flex-col items-center rounded-lg shadow md:flex-row hover:bg-green-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
-          >
-            <img className="carimgH object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src={pomo} />
-            <div id="cuerpoAlerta" className="flex flex-col justify-between p-4 leading-normal">
-              <h3 className={clase}>{username} {badges}</h3>
-              <h5 className="mb-3 text-center text-4xl text-red-500 dark:text-red-700">
-                SALITA ESPECIAL {num}
-              </h5>
-            </div>
-          </a>
-        )
-      }
+      <a
+        href="#"
+        className="cardImg flex flex-col items-center rounded-lg shadow md:flex-row hover:bg-green-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+      >
+        <img className="carimgH object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src={pomo} />
+        <div id="cuerpoAlerta" className="flex flex-col justify-between p-4 leading-normal">
+          <h3 className={clase}>{username} {badges}</h3>
+          <h5 className="mb-3 text-center text-4xl text-red-500 dark:text-red-700">
+            SALITA ESPECIAL {num}
+          </h5>
+        </div>
+      </a>
     </div>
   )
 }
