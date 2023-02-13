@@ -15,9 +15,11 @@ class Actividad {
 }
 const App = () => {
   const [showMessage, setShowMessage] = useState(false);
-  const [showSalita, setShowSalita] = useState(false);
   const [timer, setTimer] = useState(null);
+
+  const [showSalita, setShowSalita] = useState(false);
   const [timerSalita, setTimerSalita] = useState(null);
+
   const [usuarioActual, setUsuarioActual] = useState({})
   const [usuarioSalita, setUsuarioSalita] = useState({})
 
@@ -86,6 +88,18 @@ const App = () => {
       if (self || !message.startsWith('!')) return;
       const args = message.slice(1).split(' ');
       const command = args.shift().toLowerCase();
+      if (command === 'salitaespecial') {
+        const num = message.slice(15)
+        setUsuarioSalita({ username, estado: buscandoActividad().estado, badges, isSub, isMod, isVip, isPrime, num })
+        setShowSalita(true)
+        setTimerSalita(
+          setTimeout(() => {
+            setShowSalita(false);
+            setTimerSalita(null);
+          }, 600000)
+        );
+      }
+
       Comandos(client, channel, command, username)
       setUsuarioActual({ username, estado: buscandoActividad().estado, badges, isSub, isMod, isVip, isPrime })
 
@@ -96,18 +110,6 @@ const App = () => {
           setTimer(null);
         }, 20000)
       );
-
-      if (command === 'salitaespecial') {
-        const num = message.slice(15)
-        setUsuarioSalita({ username, estado: buscandoActividad().estado, badges, isSub, isMod, isVip, isPrime, num })
-        setShowSalita(true)
-        setTimerSalita(
-          setTimeout(() => {
-            setShowSalita(false);
-            setTimer(null);
-          }, 6000)
-        );
-      }
     });
 
     return () => {
