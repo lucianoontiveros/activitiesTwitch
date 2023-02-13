@@ -82,7 +82,7 @@ const App = () => {
         if (username != 'streamlabs' && username != 'botomizador' && username != 'streamelements' && username != 'brunisPet' && username != 'nightbot' && username != 'mohcitrus') {
           client.say(channel, mensajeGeneral + mensajeSubs + mensajeMod + mensajeVid)
         }
-        return console.log("El username fue registrado")
+
       }
 
       if (self || !message.startsWith('!')) return;
