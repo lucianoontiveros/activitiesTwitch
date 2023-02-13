@@ -17,6 +17,7 @@ const App = () => {
   const [showMessage, setShowMessage] = useState(false);
   const [showSalita, setShowSalita] = useState(false);
   const [timer, setTimer] = useState(null);
+  const [timerSalita, setTimerSalita] = useState(null);
   const [usuarioActual, setUsuarioActual] = useState({})
   const [usuarioSalita, setUsuarioSalita] = useState({})
 
@@ -100,11 +101,11 @@ const App = () => {
         const num = message.slice(15)
         setUsuarioSalita({ username, estado: buscandoActividad().estado, badges, isSub, isMod, isVip, isPrime, num })
         setShowSalita(true)
-        setTimer(
+        setTimerSalita(
           setTimeout(() => {
             setShowSalita(false);
             setTimer(null);
-          }, 600000)
+          }, 6000)
         );
       }
     });
