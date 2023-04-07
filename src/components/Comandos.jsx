@@ -33,11 +33,9 @@ const Comandos = (client, channel, command, username) => {
       break;
     case 'trabajar':
       buscandoActividad().estado = "Estoy trabajando 👔"
-      client.say(channel, `En estos momentos ${username} indicó que está trabajando 🦺`)
       break;
     case 'estudiar':
       buscandoActividad().estado = "estoy estudiando 📒📚"
-      client.say(channel, `En estos momentos ${username} indicó que está estudiando 💻`)
       break;
     case 'tereré':
       buscandoActividad().estado = "Vamos con el tereré 🧉🍶"

@@ -79,7 +79,7 @@ const App = () => {
             setTimer(null);
           }, 20000)
         );
-        if (username != 'streamlabs' && username != 'botomizador' && username != 'streamelements' && username != 'brunisPet' && username != 'nightbot' && username != 'mohcitrus') {
+        if (username != 'streamlabs' && username != 'botomizador' && username != 'streamelements' && username != 'brunispet' && username != 'nightbot' && username != 'mohcitrus') {
           client.say(channel, mensajeGeneral + mensajeSubs + mensajeMod + mensajeVid)
         }
 
