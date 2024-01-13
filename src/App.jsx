@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import tmi, { client } from 'tmi.js'
-import dotenv from 'dotenv';
+import dontev from 'dotenv';
 import MensajeEmergente from "./components/MensajeEmergente.jsx";
 import Comandos from "./components/Comandos.jsx";
 import SalitaEspecial from "./components/SalitaEspecial.jsx";
